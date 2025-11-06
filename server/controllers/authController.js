@@ -5,7 +5,7 @@ const generateToken = require('../utils/generateToken');
 // @route   POST /api/auth/register
 // @access  Public
 
-exports.registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 

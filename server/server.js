@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const authRoutes = require('./routes/authRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -21,6 +22,9 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bo
 app.get('/', (req, res) => {
     res.json('API is running...');
 });
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 //Start server
 const PORT = process.env.PORT || 5000;
