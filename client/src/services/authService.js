@@ -8,17 +8,17 @@ const authService = {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
         }
-        return response.data;
+        return response;
     },
 
     // Login existing user
     login : async ( credentials ) => {
-        const response = await api.post('api/auth/login', credentials); 
+        const response = await api.post('/auth/login', credentials); 
         if ( response.data.token ){
             localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', JSON.stringify(response.data.user)); 
+            localStorage.setItem('user', JSON.stringify(response.data.name)); 
         }
-        return response.data ; 
+        return response ; 
     },
 
     // Logout user
@@ -42,3 +42,4 @@ const authService = {
 export default authService ; 
 
 // !! converts a value to it's boolean equivalent 
+
