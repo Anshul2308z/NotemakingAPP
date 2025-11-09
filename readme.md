@@ -1,5 +1,3 @@
-Perfect! Here's a comprehensive README.md for your project:
-
 ---
 
 ```markdown
@@ -53,7 +51,7 @@ A full-stack note-making application built with the MERN stack (MongoDB, Express
 
 ## 📂 Project Structure
 
-![alt text](image-1.png)
+<img width="445" height="767" alt="image" src="https://github.com/user-attachments/assets/94688692-fc7a-42c1-8094-c8f5b5dbe19a" />
 
 ## 🚀 Getting Started
 
@@ -263,22 +261,3 @@ For support, email your.email@example.com or open an issue in the GitHub reposit
 
 **Happy Note Taking! 📝**
 ```
-
----
-
-This README includes:
-- ✅ Project overview and features
-- ✅ Complete tech stack
-- ✅ Detailed project structure
-- ✅ Step-by-step installation guide
-- ✅ API endpoint documentation
-- ✅ Usage instructions
-- ✅ Security features
-- ✅ Environment variables explanation
-- ✅ Testing checklist
-- ✅ Known limitations
-- ✅ Future enhancement ideas
-- ✅ Contributing guidelines
-- ✅ Professional formatting with emojis
-
-Feel free to customize the author section, GitHub links, and any other details specific to your project! 🚀
