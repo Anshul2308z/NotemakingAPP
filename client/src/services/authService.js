@@ -4,21 +4,24 @@ const authService = {
     // Register a new user 
     register : async ( userData ) => {
         const response = await api.post('/auth/register', userData);
-        if ( response.data.token ) {
+        // response.data contains {_id, name, email, token}
+        if (response.data.token) {
             localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', JSON.stringify(response.data.user));
+            // store only the user's name (primitive) to avoid storing response objects
+            localStorage.setItem('user', JSON.stringify(response.data.name));
         }
-        return response;
+        return response.data;
     },
 
     // Login existing user
     login : async ( credentials ) => {
-        const response = await api.post('/auth/login', credentials); 
-        if ( response.data.token ){
+        const response = await api.post('/auth/login', credentials);
+        // response.data contains {_id, name, email, token}
+        if (response.data.token) {
             localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', JSON.stringify(response.data.name)); 
+            localStorage.setItem('user', JSON.stringify(response.data.name));
         }
-        return response ; 
+        return response.data;
     },
 
     // Logout user

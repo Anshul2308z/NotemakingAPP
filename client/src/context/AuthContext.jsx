@@ -16,16 +16,18 @@ export const AuthProvider = ({ children }) => {
 
     // Login function 
     const login = async (credentials) => {
-        const userData = await authService.login(credentials); 
-        setUser(userData);
-        return userData ;    
+        const userData = await authService.login(credentials);
+        // authService.login now returns response.data with shape {_id, name, email, token}
+        // store only the user's name in context so components render a primitive
+        setUser(userData.name);
+        return userData;
     };
 
     // Register function 
     const register = async (userData) => {
         const newUser = await authService.register(userData);
-        setUser(newUser);
-        return newUser ; 
+        setUser(newUser.name);
+        return newUser;
     };
 
     // Logout function
